@@ -1,0 +1,16 @@
+void setup() {
+  // put your setup code here, to run once:
+DDRB |=1<<5;
+DDRD &=0<<5;
+  Serial.begin(9600); 
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int x= PIND & 0x20;
+  if(x==32)
+  PORTB |=1<<5;
+  else
+  PORTB=0;
+
+}
